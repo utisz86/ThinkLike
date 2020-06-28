@@ -92,7 +92,11 @@ def tesztkeszlet():
     teszt(osszehasonlitas(7, 7) == 0)
     teszt(osszehasonlitas(2, 3) == -1)
     teszt(osszehasonlitas(42, 1) == 1)
-
+    # 6.9.12
+    teszt(atfogo(3, 4) == 5.0)
+    teszt(atfogo(12, 5) == 13.0)
+    teszt(atfogo(24, 7) == 25.0)
+    teszt(atfogo(9, 12) == 15.0)
 
 # 6.9.1 feladat
 def fordulj_orajarasi_iranyba(tajegyseg):
@@ -257,6 +261,17 @@ ha a < b]
         return 0
     else:
         return -1
+
+# 6.9.12
+def atfogo(a, b):
+    """[Írj egy atfogo nev˝u függvényt, amely egy derékszög˝u háromszög két befogójának hossza alapján visszaadja
+az átfogó hosszát:]
+
+    Args:
+        a ([type]): [description]
+        b ([type]): [description]
+    """
+    return (a**2 + b**2)**(1/2)
 
 # Tesztvegrehajtasa
 tesztkeszlet()

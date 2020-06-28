@@ -55,12 +55,17 @@ def tesztkeszlet():
     teszt(napok_hozzaadasa("vas", 100) == None)
     teszt(napok_hozzaadasa("vasárnap", "100") == None)
     teszt(napok_hozzaadasa("vas", "100") == None)
-    #6.9.5
+    # 6.9.5
     teszt(napok_hozzaadasa("vasárnap", -1) == "szombat")
     teszt(napok_hozzaadasa("vasárnap", -7) == "vasárnap")
     teszt(napok_hozzaadasa("kedd", -100) == "vasárnap")
     teszt(napok_hozzaadasa("kedd", -10) == "szombat")
     teszt(napok_hozzaadasa("kedd", -20) == "szerda")
+    # 6.9.6
+    teszt(honap_napja("február") == 28)
+    teszt(honap_napja("november") == 30)
+    teszt(honap_napja("december") == 31)
+    teszt(honap_napja("Hallowen") == None)
 
 
 # 6.9.1 feladat
@@ -146,6 +151,22 @@ argumentumként, és egy nap nevét adja vissza:]
         return (nap_nev(abs(((nap_sorszam(nap) + napok_szama) % 7)) % 6))
     else:
         return nap_nev((nap_sorszam(nap) + napok_szama)%7)
+    
+
+# 6.9.6
+def honap_napja(honap):
+    """[Írj egy honap_napja függvényt, mely egy hónap neve alapján megadja, hogy hány nap van a hónapban. (A
+szök˝oévekkel ne foglalkozz.):]
+    """
+    if type(honap) != str:
+        return None
+
+    honapok = {"január" : 31, "február" : 28, "március":31,"április":30,"május":31,"június":30,"július":31,"augusztus":31,"szeptember":30,"október":31, "november":30, "december":31}
+
+    try:
+        return honapok[honap]
+    except:
+        pass
     
 
 # Tesztvegrehajtasa

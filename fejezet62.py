@@ -106,6 +106,11 @@ def tesztkeszlet():
     teszt(metszespont(1, 6, 3, 12) == 3.0)
     teszt(metszespont(6, 1, 1, 6) == 7.0)
     teszt(metszespont(4, 6, 12, 8) == 5.0)
+    # 6.9.14
+    teszt(paros_e(3) == False)
+    teszt(paros_e(4) == True)
+    teszt(paros_e("a") == None)
+    teszt(paros_e(4.2) == None)
 
 
 # 6.9.1 feladat
@@ -315,5 +320,21 @@ függ˝oleges tengelyét. (Feltételezheted, hogy az x1 és x2 értéke különb
     m = meredekseg(x1, y1, x2, y2)
     return y1 - m * x1    
 
+# 6.9.14
+def paros_e(n):
+    """[Írj egy paros_e(n) függvényt, amely egy egészet vár argumentumként, és True-t ad vissza, ha az argumentum
+páros szám, és False-t, ha páratlan]
+
+    Args:
+        n ([type]): [description]
+    """
+    if not(isinstance(n, int)):
+        return None
+
+    if n % 2 == 0:
+        return True
+    else:
+        return False
+    
 # Tesztvegrehajtasa
 tesztkeszlet()

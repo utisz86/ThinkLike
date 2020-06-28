@@ -130,6 +130,14 @@ def tesztkeszlet():
     teszt(not tobbszorose_e(12, 5))
     teszt(tobbszorose_e(12, 6))
     teszt(not tobbszorose_e(12, 7))
+    # 6.9.18
+    teszt(celsiusra_valtas(212) == 100) # A víz forráspontja
+    teszt(celsiusra_valtas(32) == 0) # A víz fagyáspontja
+    teszt(celsiusra_valtas(-40) == -40) # Ó, micsoda érdekes eset!
+    teszt(celsiusra_valtas(36) == 2)
+    teszt(celsiusra_valtas(37) == 3)
+    teszt(celsiusra_valtas(38) == 3)
+    teszt(celsiusra_valtas(39) == 4)
 
 # 6.9.1 feladat
 def fordulj_orajarasi_iranyba(tajegyseg):
@@ -388,6 +396,18 @@ def tobbszorose_e(n, t):
     """
     return n % t == 0
     
+# 6.9.18
+def celsiusra_valtas(f):
+    """[Írj egy celsiusra_valtas(f) függvényt, mely egy Fahrenheitben megadott értéket Celsius fokra vált át.
+A függvény a legközelebbi egész értéket adja vissza. (Segítség: Ha a beépített round függvényt szeretnéd
+használni, próbáld kiíratni a round.__doc__ -et a Python konzolban, vagy a függvény nevén állva nyomd le
+a Ctrl+Q billenty˝ukombinációt. Kísérletezz, ameddig rá nem jössz, hogyan m˝uködik. ):]
+
+    Args:
+        f ([type]): [description]
+    """
+   
+    return round((f - 32) * (5/9))
 
 # Tesztvegrehajtasa
 tesztkeszlet()

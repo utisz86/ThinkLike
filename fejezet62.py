@@ -103,6 +103,9 @@ def tesztkeszlet():
     teszt(meredekseg(1, 2, 3, 3) == 0.5)
     teszt(meredekseg(2, 4, 1, 2) == 2.0)
     teszt(meredekseg(2, 4, 2, 5) == None)
+    teszt(metszespont(1, 6, 3, 12) == 3.0)
+    teszt(metszespont(6, 1, 1, 6) == 7.0)
+    teszt(metszespont(4, 6, 12, 8) == 5.0)
 
 
 # 6.9.1 feladat
@@ -281,6 +284,7 @@ az átfogó hosszát:]
     return (a**2 + b**2)**(1/2)
 
 # 6.9.13
+# A
 def meredekseg(x1, y1, x2, y2):
     """[Implementáld a meredekseg(x1, y1, x2, y2) függvényt, úgy, hogy az (x1, y1) és (x2, y2) pontokon
 átmen˝o egyenes meredekségét határozza meg:]
@@ -295,6 +299,21 @@ def meredekseg(x1, y1, x2, y2):
         return (y2-y1)/(x2-x1)
     except:
         return None
+
+# B
+def metszespont(x1, y1, x2, y2):
+    """[Utána használd fel egy új, metszespont(x1, y1, x2, y2) függvényben, amely visszaadja, hogy az
+(x1, y1), (x2, y2) pontokon átmen˝o egyenes milyen y értéknél metszi a derékszög˝u koordinátarendszer
+függ˝oleges tengelyét. (Feltételezheted, hogy az x1 és x2 értéke különböz˝o.):]
+
+    Args:
+        x1 ([type]): [description]
+        y1 ([type]): [description]
+        x2 ([type]): [description]
+        y2 ([type]): [description]
+    """
+    m = meredekseg(x1, y1, x2, y2)
+    return y1 - m * x1    
 
 # Tesztvegrehajtasa
 tesztkeszlet()

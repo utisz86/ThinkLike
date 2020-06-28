@@ -35,6 +35,11 @@ def tesztkeszlet():
     teszt(fordulj_orajarasi_iranyba("Ny") == "É")
     teszt(fordulj_orajarasi_iranyba(42) == None)
     teszt(fordulj_orajarasi_iranyba("ostobaság") == None)
+    # 6.9.2
+    teszt(nap_nev(3) == "csütörtök")
+    teszt(nap_nev(6) == "vasárnap")
+    teszt(nap_nev(42) == None)
+    teszt(nap_nev("3") == None)
 
 # 6.9.1 feladat
 def fordulj_orajarasi_iranyba(tajegyseg):
@@ -56,6 +61,17 @@ amely egy tájegységet leíró karakter rövidítését várja, és visszaadja 
         return "K"
     elif tajegyseg == "D":
         return "Ny"
+    else:
+        return None
+
+
+# 6.9.2 feladat nap_nev fuggveny
+def nap_nev(nap_szam):
+    napok = ["hétfő", "Kedd", "szerda", "csütörtök", "péntek", "szombat", "vasárnap"]
+    if type(nap_szam) != int:
+        return None
+    elif nap_szam >= 0 and nap_szam <= 6:
+        return napok[nap_szam]
     else:
         return None
 

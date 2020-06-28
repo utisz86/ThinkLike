@@ -66,6 +66,12 @@ def tesztkeszlet():
     teszt(honap_napja("november") == 30)
     teszt(honap_napja("december") == 31)
     teszt(honap_napja("Hallowen") == None)
+    # 6.9.7
+    teszt(masodpercre_valtas(2, 30, 10) == 9010)
+    teszt(masodpercre_valtas(2, 0, 0) == 7200)
+    teszt(masodpercre_valtas(0, 2, 0) == 120)
+    teszt(masodpercre_valtas(0, 0, 42) == 42)
+    teszt(masodpercre_valtas(0, -10, 10) == -590)
 
 
 # 6.9.1 feladat
@@ -167,6 +173,26 @@ szök˝oévekkel ne foglalkozz.):]
         return honapok[honap]
     except:
         pass
+    
+# 6.9.7
+def masodpercre_valtas(hh, mm, ss):
+    """[Írj egy masodpercre_valtas függvényt, mely órákat, perceket és másodperceket kap meg argumentumként,
+és kiszámolja hány másodpercnek felelnek meg összesen. Néhány teszteset:]
+
+    Args:
+        hh ([int]): [description]
+        mm ([int]): [description]
+        ss ([int]): [description]
+    """
+    if not(isinstance(hh, int)) and not(isinstance(hh, float)):
+        return None
+    elif not(isinstance(mm, int)) and not(isinstance(mm, float)):
+        return None
+    elif not(isinstance(ss, int)) and not(isinstance(ss, float)):
+        return None
+    
+    return (hh * 3600) + (mm * 60) + ss
+
     
 
 # Tesztvegrehajtasa

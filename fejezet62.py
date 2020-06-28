@@ -79,6 +79,15 @@ def tesztkeszlet():
     teszt(orakra_valtas(9010) == 2)
     teszt(percekre_valtas(9010) == 30)
     teszt(masodpercekre_valtas(9010) == 10)
+    # 6.9.10
+    teszt(3 % 4 == 0)
+    teszt(3 % 4 == 3)
+    teszt(3 / 4 == 0)
+    teszt(3 // 4 == 0)
+    teszt(3+4 * 2 == 14)
+    teszt(4-2+2 == 0)
+    teszt(len("helló, világ!") == 13)
+
 
 # 6.9.1 feladat
 def fordulj_orajarasi_iranyba(tajegyseg):

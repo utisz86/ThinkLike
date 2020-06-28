@@ -97,6 +97,13 @@ def tesztkeszlet():
     teszt(atfogo(12, 5) == 13.0)
     teszt(atfogo(24, 7) == 25.0)
     teszt(atfogo(9, 12) == 15.0)
+    # 6.9.13
+    teszt(meredekseg(5, 3, 4, 2) == 1.0)
+    teszt(meredekseg(1, 2, 3, 2) == 0.0)
+    teszt(meredekseg(1, 2, 3, 3) == 0.5)
+    teszt(meredekseg(2, 4, 1, 2) == 2.0)
+    teszt(meredekseg(2, 4, 2, 5) == None)
+
 
 # 6.9.1 feladat
 def fordulj_orajarasi_iranyba(tajegyseg):
@@ -272,6 +279,22 @@ az átfogó hosszát:]
         b ([type]): [description]
     """
     return (a**2 + b**2)**(1/2)
+
+# 6.9.13
+def meredekseg(x1, y1, x2, y2):
+    """[Implementáld a meredekseg(x1, y1, x2, y2) függvényt, úgy, hogy az (x1, y1) és (x2, y2) pontokon
+átmen˝o egyenes meredekségét határozza meg:]
+
+    Args:
+        x1 ([type]): [description]
+        y1 ([type]): [description]
+        x2 ([type]): [description]
+        y2 ([type]): [description]
+    """
+    try:
+        return (y2-y1)/(x2-x1)
+    except:
+        return None
 
 # Tesztvegrehajtasa
 tesztkeszlet()

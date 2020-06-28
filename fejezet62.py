@@ -40,6 +40,13 @@ def tesztkeszlet():
     teszt(nap_nev(6) == "vasárnap")
     teszt(nap_nev(42) == None)
     teszt(nap_nev("3") == None)
+    # 6.9.3
+    teszt(nap_sorszam("péntek") == 4)
+    teszt(nap_sorszam("hétfő") == 0)
+    teszt(nap_sorszam(nap_nev(3)) == 3)
+    teszt(nap_nev(nap_sorszam("csütörtök")) == "csütörtök")
+    teszt(nap_sorszam("nap_nev(3)") == None)
+
 
 # 6.9.1 feladat
 def fordulj_orajarasi_iranyba(tajegyseg):
@@ -67,6 +74,16 @@ amely egy tájegységet leíró karakter rövidítését várja, és visszaadja 
 
 # 6.9.2 feladat nap_nev fuggveny
 def nap_nev(nap_szam):
+    """Írj egy nap_nev függvényt, amely a [0, 6] tartományba es˝o egész számot vár paraméterként, és visszaadja az
+adott sorszámú nap nevét. A 0. nap a hétf˝o. Még egyszer leírjuk, ha nem várt érték érkezik, akkor None értékkel
+térj vissza. Néhány teszt, melyen át kell mennie a függvényednek:
+
+    Args:
+        nap_szam ([int]): [description]
+
+    Returns:
+        [str]: [description]
+    """
     napok = ["hétfő", "Kedd", "szerda", "csütörtök", "péntek", "szombat", "vasárnap"]
     if type(nap_szam) != int:
         return None
@@ -74,6 +91,23 @@ def nap_nev(nap_szam):
         return napok[nap_szam]
     else:
         return None
+
+# 6.9.3 feladat
+def nap_sorszam(nap):
+    """[Írd meg az el˝oz˝o függvény fordítottját, amely egy nap neve alapján adja meg annak sorszámát:]
+
+    Args:
+        nap ([type]): [description]
+    """
+
+    napok = ["hétfő", "Kedd", "szerda", "csütörtök", "péntek", "szombat", "vasárnap"]
+    
+    for i in range(7):
+        if napok[i] == nap:
+            return i
+    
+    return None
+
 
 
 # Tesztvegrehajtasa

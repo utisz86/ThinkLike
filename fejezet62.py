@@ -138,6 +138,13 @@ def tesztkeszlet():
     teszt(celsiusra_valtas(37) == 3)
     teszt(celsiusra_valtas(38) == 3)
     teszt(celsiusra_valtas(39) == 4)
+    # 6.9.19
+    teszt(fahrenheitre_valtas(0) == 32)
+    teszt(fahrenheitre_valtas(100) == 212)
+    teszt(fahrenheitre_valtas(-40) == -40)
+    teszt(fahrenheitre_valtas(12) == 54)
+    teszt(fahrenheitre_valtas(18) == 64)
+    teszt(fahrenheitre_valtas(-48) == -54)
 
 # 6.9.1 feladat
 def fordulj_orajarasi_iranyba(tajegyseg):
@@ -408,6 +415,17 @@ a Ctrl+Q billenty˝ukombinációt. Kísérletezz, ameddig rá nem jössz, hogyan
     """
    
     return round((f - 32) * (5/9))
+
+# 6.9.19
+def fahrenheitre_valtas(c):
+    """[Most tedd az ellenkez˝ojét: írj egy celsiusra_valtas függvényt, mely egy Celsius-fokban megadott értéket
+Fahrenheit skálára vált át:]
+
+    Args:
+        c ([type]): [description]
+    """
+    return round(c * (9/5) + 32)
+    
 
 # Tesztvegrehajtasa
 tesztkeszlet()

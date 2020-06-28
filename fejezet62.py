@@ -55,6 +55,12 @@ def tesztkeszlet():
     teszt(napok_hozzaadasa("vas", 100) == None)
     teszt(napok_hozzaadasa("vasárnap", "100") == None)
     teszt(napok_hozzaadasa("vas", "100") == None)
+    #6.9.5
+    teszt(napok_hozzaadasa("vasárnap", -1) == "szombat")
+    teszt(napok_hozzaadasa("vasárnap", -7) == "vasárnap")
+    teszt(napok_hozzaadasa("kedd", -100) == "vasárnap")
+    teszt(napok_hozzaadasa("kedd", -10) == "szombat")
+    teszt(napok_hozzaadasa("kedd", -20) == "szerda")
 
 
 # 6.9.1 feladat
@@ -117,7 +123,7 @@ def nap_sorszam(nap):
     
     return None
 
-# 6.9.4 feladat
+# 6.9.4 feladat + 6.9.5
 def napok_hozzaadasa(nap, napok_szama):
     """[Írj egy függvényt, amely segít megválaszolni az ehhez hasonló kérdéseket: „Szerda van. 19 nap múlva nyaralni
 megyek. Milyen napra fog esni?” A függvénynek tehát egy nap nevét és egy „hány nap múlva” értéket vár
@@ -136,7 +142,10 @@ argumentumként, és egy nap nevét adja vissza:]
     if type(napok_szama) != int:
         return None
 
-    return (nap_nev(((nap_sorszam(nap) + napok_szama) % 7) % 6))
+    if nap_sorszam(nap) + napok_szama >= 0:
+        return (nap_nev(abs(((nap_sorszam(nap) + napok_szama) % 7)) % 6))
+    else:
+        return nap_nev((nap_sorszam(nap) + napok_szama)%7)
     
 
 # Tesztvegrehajtasa

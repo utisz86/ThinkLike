@@ -111,6 +111,11 @@ def tesztkeszlet():
     teszt(paros_e(4) == True)
     teszt(paros_e("a") == None)
     teszt(paros_e(4.2) == None)
+    # 6.9.15
+    teszt(paratlen_e(3) == True)
+    teszt(paratlen_e(4) == False)
+    teszt(paratlen_e("a") == None)
+    teszt(paratlen_e(4.2) == None)
 
 
 # 6.9.1 feladat
@@ -335,6 +340,19 @@ páros szám, és False-t, ha páratlan]
         return True
     else:
         return False
+    
+# 6.9.15
+def paratlen_e(n):
+    """[Most írj egy paratlen_e(n) függvényt is, amely akkor tér vissza True értékkel, ha n páratlan, és akkor
+False értékkel, ha páros. Teszteket is készíts!]
+
+    Args:
+        n ([type]): [description]
+    """
+    if paros_e(n) == None:
+        return None
+        
+    return not paros_e(n)
     
 # Tesztvegrehajtasa
 tesztkeszlet()

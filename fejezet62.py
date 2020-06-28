@@ -30,8 +30,34 @@ def tesztkeszlet():
     # Alap teszt
     teszt(abs(17) == 17)
     # Tovabbi tesztek
+    # 6.9.1
+    teszt(fordulj_orajarasi_iranyba("É") == "K")
+    teszt(fordulj_orajarasi_iranyba("Ny") == "É")
+    teszt(fordulj_orajarasi_iranyba(42) == None)
+    teszt(fordulj_orajarasi_iranyba("ostobaság") == None)
 
+# 6.9.1 feladat
+def fordulj_orajarasi_iranyba(tajegyseg):
+    """A négy tájegységet rövidítse: „K” , „Ny” , „É”, „D”. Írj egy fordulj_orajarasi_iranyba függvényt,
+amely egy tájegységet leíró karakter rövidítését várja, és visszaadja az órajárási irányban nézve szomszédos
+égtáj rövidítését. Itt van néhány tesztest, melyre m˝uködnie kell a függvényednek:
 
+    Args:
+        tajegyseg (string): [description]
+
+    Returns:
+        string: „K” , „Ny” , „É”, „D”.
+    """
+    if tajegyseg == "K":
+        return "D"
+    elif tajegyseg == "Ny":
+        return "É"
+    elif tajegyseg == "É":
+        return "K"
+    elif tajegyseg == "D":
+        return "Ny"
+    else:
+        return None
 
 
 # Tesztvegrehajtasa

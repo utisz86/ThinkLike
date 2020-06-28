@@ -72,6 +72,9 @@ def tesztkeszlet():
     teszt(masodpercre_valtas(0, 2, 0) == 120)
     teszt(masodpercre_valtas(0, 0, 42) == 42)
     teszt(masodpercre_valtas(0, -10, 10) == -590)
+    # 6.9.8
+    teszt(masodpercre_valtas(2.5, 0, 10.71) == 9010)
+    teszt(masodpercre_valtas(2.433,0,0) == 8758)
 
 
 # 6.9.1 feladat
@@ -174,7 +177,7 @@ szök˝oévekkel ne foglalkozz.):]
     except:
         pass
     
-# 6.9.7
+# 6.9.7 + 6.9.8
 def masodpercre_valtas(hh, mm, ss):
     """[Írj egy masodpercre_valtas függvényt, mely órákat, perceket és másodperceket kap meg argumentumként,
 és kiszámolja hány másodpercnek felelnek meg összesen. Néhány teszteset:]
@@ -191,9 +194,8 @@ def masodpercre_valtas(hh, mm, ss):
     elif not(isinstance(ss, int)) and not(isinstance(ss, float)):
         return None
     
-    return (hh * 3600) + (mm * 60) + ss
+    return int((hh * 3600) + (mm * 60) + ss)
 
-    
 
 # Tesztvegrehajtasa
 tesztkeszlet()

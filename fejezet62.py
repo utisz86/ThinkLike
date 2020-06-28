@@ -46,6 +46,15 @@ def tesztkeszlet():
     teszt(nap_sorszam(nap_nev(3)) == 3)
     teszt(nap_nev(nap_sorszam("csütörtök")) == "csütörtök")
     teszt(nap_sorszam("nap_nev(3)") == None)
+    teszt(nap_sorszam("Halloween") == None)
+    # 6.9.4
+    teszt(napok_hozzaadasa("hétfő", 4) == "péntek")
+    teszt(napok_hozzaadasa("kedd", 0) == "kedd")
+    teszt(napok_hozzaadasa("kedd", 14) == "kedd")
+    teszt(napok_hozzaadasa("vasárnap", 100) == "kedd")
+    teszt(napok_hozzaadasa("vas", 100) == None)
+    teszt(napok_hozzaadasa("vasárnap", "100") == None)
+    teszt(napok_hozzaadasa("vas", "100") == None)
 
 
 # 6.9.1 feladat
@@ -84,7 +93,7 @@ térj vissza. Néhány teszt, melyen át kell mennie a függvényednek:
     Returns:
         [str]: [description]
     """
-    napok = ["hétfő", "Kedd", "szerda", "csütörtök", "péntek", "szombat", "vasárnap"]
+    napok = ["hétfő", "kedd", "szerda", "csütörtök", "péntek", "szombat", "vasárnap"]
     if type(nap_szam) != int:
         return None
     elif nap_szam >= 0 and nap_szam <= 6:
@@ -100,7 +109,7 @@ def nap_sorszam(nap):
         nap ([type]): [description]
     """
 
-    napok = ["hétfő", "Kedd", "szerda", "csütörtök", "péntek", "szombat", "vasárnap"]
+    napok = ["hétfő", "kedd", "szerda", "csütörtök", "péntek", "szombat", "vasárnap"]
     
     for i in range(7):
         if napok[i] == nap:
@@ -108,7 +117,27 @@ def nap_sorszam(nap):
     
     return None
 
+# 6.9.4 feladat
+def napok_hozzaadasa(nap, napok_szama):
+    """[Írj egy függvényt, amely segít megválaszolni az ehhez hasonló kérdéseket: „Szerda van. 19 nap múlva nyaralni
+megyek. Milyen napra fog esni?” A függvénynek tehát egy nap nevét és egy „hány nap múlva” értéket vár
+argumentumként, és egy nap nevét adja vissza:]
 
+    Args:
+        nap ([type]): [description]
+        napok_szama ([type]): [description]
+
+    Returns:
+        [type]: [description]
+    """
+    if nap_sorszam(nap) == None:
+        return None
+    
+    if type(napok_szama) != int:
+        return None
+
+    return (nap_nev(((nap_sorszam(nap) + napok_szama) % 7) % 6))
+    
 
 # Tesztvegrehajtasa
 tesztkeszlet()

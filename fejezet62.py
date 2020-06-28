@@ -75,7 +75,10 @@ def tesztkeszlet():
     # 6.9.8
     teszt(masodpercre_valtas(2.5, 0, 10.71) == 9010)
     teszt(masodpercre_valtas(2.433,0,0) == 8758)
-
+    # 6.9.9
+    teszt(orakra_valtas(9010) == 2)
+    teszt(percekre_valtas(9010) == 30)
+    teszt(masodpercekre_valtas(9010) == 10)
 
 # 6.9.1 feladat
 def fordulj_orajarasi_iranyba(tajegyseg):
@@ -196,6 +199,34 @@ def masodpercre_valtas(hh, mm, ss):
     
     return int((hh * 3600) + (mm * 60) + ss)
 
+# 6.9.9
+# A
+def orakra_valtas(ss):
+    """[orakra_valtas: az argumentumként átadott másodperceket órákra váltja. A teljes órák számával tér
+vissza.]
+
+    Args:
+        ss ([type]): [description]
+    """
+    return ss // 3600
+    
+# B
+def percekre_valtas(ss):
+    """[percekre_valtas: az argumentumként átadott másodpercekb˝ol leszámítja a teljes órákat, a maradékot
+pedig percekbe váltja. A teljes percek számával tér vissza.]
+
+    Args:
+        ss ([type]): [description]
+    """
+    return (ss%3600) // 60
+# C
+def masodpercekre_valtas(ss):
+    """[masodpercekre_valtas: visszatér az argumentumként kapott másodpercekb˝ol fennmaradó másodpercekkel.]
+
+    Args:
+        ss ([type]): [description]
+    """
+    return (ss % 3600)%60
 
 # Tesztvegrehajtasa
 tesztkeszlet()

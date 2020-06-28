@@ -87,6 +87,11 @@ def tesztkeszlet():
     teszt(3+4 * 2 == 14)
     teszt(4-2+2 == 0)
     teszt(len("helló, világ!") == 13)
+    # 6.9.11
+    teszt(osszehasonlitas(5, 4) == 1)
+    teszt(osszehasonlitas(7, 7) == 0)
+    teszt(osszehasonlitas(2, 3) == -1)
+    teszt(osszehasonlitas(42, 1) == 1)
 
 
 # 6.9.1 feladat
@@ -236,6 +241,22 @@ def masodpercekre_valtas(ss):
         ss ([type]): [description]
     """
     return (ss % 3600)%60
+
+# 6.9.11
+def osszehasonlitas(a, b):
+    """[Írj egy osszehasonlitas függvényt, amely 1-et ad vissza, ha a > b, 0-t ad vissza, ha a == b, és -1-t,
+ha a < b]
+
+    Args:
+        a ([type]): [description]
+        b ([type]): [description]
+    """
+    if a > b:
+        return 1
+    elif a==b:
+        return 0
+    else:
+        return -1
 
 # Tesztvegrehajtasa
 tesztkeszlet()

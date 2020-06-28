@@ -124,6 +124,12 @@ def tesztkeszlet():
     teszt(tenyezo_e(1, 15))
     teszt(tenyezo_e(15, 15))
     teszt(not tenyezo_e(25, 15))
+    # 6.9.17
+    teszt(tobbszorose_e(12, 3))
+    teszt(tobbszorose_e(12, 4))
+    teszt(not tobbszorose_e(12, 5))
+    teszt(tobbszorose_e(12, 6))
+    teszt(not tobbszorose_e(12, 7))
 
 # 6.9.1 feladat
 def fordulj_orajarasi_iranyba(tajegyseg):
@@ -371,6 +377,17 @@ def tenyezo_e(t, n):
          n ([type]): [description]
     """
     return n % t == 0
+
+# 6.9.17
+def tobbszorose_e(n, t):
+    """[Írj egy tobbszorose_e fejléc˝u függvényt, mely kielégíti az alábbi egységtesztet:]
+
+    Args:
+        t ([type]): [description]
+        n ([type]): [description]
+    """
+    return n % t == 0
+    
 
 # Tesztvegrehajtasa
 tesztkeszlet()

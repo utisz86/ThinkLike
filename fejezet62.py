@@ -116,7 +116,14 @@ def tesztkeszlet():
     teszt(paratlen_e(4) == False)
     teszt(paratlen_e("a") == None)
     teszt(paratlen_e(4.2) == None)
-
+    # 6.9.16
+    teszt(tenyezo_e(3, 12))
+    teszt(not tenyezo_e(5, 12))
+    teszt(tenyezo_e(7, 14))
+    teszt(not tenyezo_e(7, 15))
+    teszt(tenyezo_e(1, 15))
+    teszt(tenyezo_e(15, 15))
+    teszt(not tenyezo_e(25, 15))
 
 # 6.9.1 feladat
 def fordulj_orajarasi_iranyba(tajegyseg):
@@ -351,8 +358,19 @@ False értékkel, ha páros. Teszteket is készíts!]
     """
     if paros_e(n) == None:
         return None
-        
+
     return not paros_e(n)
-    
+
+ # 6.9.16
+def tenyezo_e(t, n):
+    """[Készíts egy tenyezo_e(t, n) fejléc˝u függvényt, amely átmegy az alábbi teszteken. (Ne csak a prímtényez
+˝okre adjon vissza igazat a függvényed.):]
+
+     Args:
+         t ([type]): [description]
+         n ([type]): [description]
+    """
+    return n % t == 0
+
 # Tesztvegrehajtasa
 tesztkeszlet()

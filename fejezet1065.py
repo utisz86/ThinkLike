@@ -1,4 +1,5 @@
 import turtle
+import time
 
 turtle.setup(400, 500)
 ablak = turtle.Screen()
@@ -36,6 +37,8 @@ Eszti.shape("circle")
 Eszti.shapesize(3)
 Eszti.fillcolor("green")
 
+time.sleep(3)
+
 # A közlekedési lámpa egyfajta állapotautomata, három állapottal:
 # zölddel, sárgával és pirossal. Az állapotokat rendre
 # 0, 1, 2 számokkal írjuk le.
@@ -47,24 +50,29 @@ allapot_sorszam = 0
 
 def allapot_automata_esemenykezeloje():
     global allapot_sorszam
+    varakozas = 1000
     if allapot_sorszam == 0:
-        draw_cirle(Eszti, "lightgreen")
+        draw_cirle(Eszti, "green")
         Eszti.forward(70)
         Eszti.fillcolor("orange")
         allapot_sorszam = 1
     elif allapot_sorszam == 1:
-        draw_cirle(Eszti, "cornsilk")
+        Eszti.backward(70)
+        draw_cirle(Eszti, "darkgrey")
+        Eszti.forward(70)
+        Eszti.fillcolor("orange")
+        allapot_sorszam = 2
+    elif allapot_sorszam == 2:
         Eszti.forward(70)
         Eszti.fillcolor("red")
-        allapot_sorszam = 2
+        allapot_sorszam = 3
+        varakozas = 2000
     else:
-        draw_cirle(Eszti, "coral")
         Eszti.back(140)
         Eszti.fillcolor("green")
         allapot_sorszam = 0
+        varakozas = 3000
+    ablak.ontimer(allapot_automata_esemenykezeloje, varakozas)
 
-# Az eseménykezel˝ot a space billenty˝uhöz kötjük
-ablak.onkey(allapot_automata_esemenykezeloje, "space")
-
-ablak.listen() # Események figyelése
+allapot_automata_esemenykezeloje()
 ablak.mainloop()

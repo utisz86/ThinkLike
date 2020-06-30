@@ -20,6 +20,9 @@ def doboz_rajzolas():
     Eszti.left(90)
     Eszti.end_fill()
 
+def draw_cirle(t, fillcolor):
+        t.fillcolor(fillcolor)
+        t.stamp()
 
 doboz_rajzolas()
 
@@ -45,14 +48,17 @@ allapot_sorszam = 0
 def allapot_automata_esemenykezeloje():
     global allapot_sorszam
     if allapot_sorszam == 0:
+        draw_cirle(Eszti, "lightgreen")
         Eszti.forward(70)
         Eszti.fillcolor("orange")
         allapot_sorszam = 1
     elif allapot_sorszam == 1:
+        draw_cirle(Eszti, "cornsilk")
         Eszti.forward(70)
         Eszti.fillcolor("red")
         allapot_sorszam = 2
     else:
+        draw_cirle(Eszti, "coral")
         Eszti.back(140)
         Eszti.fillcolor("green")
         allapot_sorszam = 0

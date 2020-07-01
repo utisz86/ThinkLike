@@ -1,0 +1,6 @@
+Append multiple lines to a file in PythonAppend data to a file as a new line in Python
+Append a text to file in Python using "with statement"
+Append a text to file in Python
+This is the end of file
+It contains sample text
+Hello this is a sample file

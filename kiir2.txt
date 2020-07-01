@@ -1,0 +1,35 @@
+1	Hello this is a sample file with info.
+2	It contains sample text without.
+3	This is the end of file. Important info.
+4	Append a text to file in Python
+5	Append a text to file in Python using "with statement"
+6	Append data to a file as a new line in Python
+7	Append multiple lines to a file in Python, where is the info?
+8	Hello this is a sample file with info.
+9	It contains sample text without.
+10	This is the end of file. Important info.
+11	Append a text to file in Python
+12	Append a text to file in Python using "with statement"
+13	Append data to a file as a new line in Python
+14	Append multiple lines to a file in Python, where is the info?
+15	Hello this is a sample file with info.
+16	It contains sample text without.
+17	This is the end of file. Important info.
+18	Append a text to file in Python
+19	Append a text to file in Python using "with statement"
+20	Append data to a file as a new line in Python
+21	Append multiple lines to a file in Python, where is the info?
+22	Hello this is a sample file with info.
+23	It contains sample text without.
+24	This is the end of file. Important info.
+25	Append a text to file in Python
+26	Append a text to file in Python using "with statement"
+27	Append data to a file as a new line in Python
+28	Append multiple lines to a file in Python, where is the info?
+29	Hello this is a sample file with info.
+30	It contains sample text without.
+31	This is the end of file. Important info.
+32	Append a text to file in Python
+33	Append a text to file in Python using "with statement"
+34	Append data to a file as a new line in Python
+35	Append multiple lines to a file in Python, where is the info?

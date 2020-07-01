@@ -1,0 +1,7 @@
+Hello this is a sample file with info.
+It contains sample text without.
+This is the end of file. Important info.
+Append a text to file in Python
+Append a text to file in Python using "with statement"
+Append data to a file as a new line in Python
+Append multiple lines to a file in Python, where is the info?

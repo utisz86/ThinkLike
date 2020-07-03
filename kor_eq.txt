@@ -1,0 +1,14 @@
+SOLUTION Y:
+solve\:for\:y,\:\frac{-2yh+2yf+h^2-f^2+g^2-e^2}{2\left(g-e\right)}=\frac{2by-2dy-a^2-b^2+c^2+d^2}{2\left(-a+c\right)}\quad :\quad y=\frac{-a^2g-b^2g+c^2g+d^2g+ea^2+eb^2-ec^2-d^2e+ah^2-ch^2-af^2+cf^2+ag^2-cg^2-e^2a+e^2c}{2\left(ah-ch+eb+cf+dg-bg-af-ed\right)};\quad \:g\ne \:e,\:2\left(-a+c\right)\ne \:0,\:b\ne \frac{-ah+af-cf-dg+ch+ed}{-g+e}
+
+SOLUTION X:
+solve\:for\:x,\:\frac{2ax-2cx-a^2-b^2+c^2+d^2}{2\left(-b+d\right)}=\frac{2ex-2xg+h^2-f^2+g^2-e^2}{2\left(-f+h\right)}\quad :\quad x=\frac{-bh^2+bf^2-bg^2+e^2b+dh^2-df^2+dg^2-e^2d-a^2f+a^2h-b^2f+b^2h+c^2f-c^2h+d^2f-d^2h}{2\left(dg-bg+ah+cf+eb-af-ch-ed\right)};\quad \:2\left(-b+d\right)\ne \:0,\:2\left(-f+h\right)\ne \:0,\:a\ne \frac{-eb+ed-cf-dg+ch+bg}{-f+h}
+
+
+
+
+solve\:for\:x,\:\left(a-x\right)^2+\left(b-y\right)^2=\left(c-x\right)^2+\left(d-y\right)^2,\:\left(e-x\right)^2+\left(f-y\right)^2=\:\left(g-x\right)^2+\left(h-y\right)^2
+
+
+
+y=x,\:\left(a-x\right)^2+\left(b-y\right)^2=\left(c-x\right)^2+\left(d-y\right)^2:\quad a^2-2ax+x^2+b^2-2by+y^2=c^2-2cx+x^2+d^2-2dy+y^2

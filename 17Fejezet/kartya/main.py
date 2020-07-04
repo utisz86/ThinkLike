@@ -1,12 +1,13 @@
 import pygame
 import spritesheet
 import os
+import random
 
 # Relative paths
 current_path = os.path.dirname(__file__) # Where your .py file is located
 image_path = os.path.join(current_path, 'images') # The image folder path
 
-def main():
+def main(kard_list):
     print(os.getcwd())
     """ A játék inicializálása és a f˝ociklus futtatása. """
     pygame.init() # El˝okészíti a pygame modult a használatra.
@@ -47,7 +48,7 @@ def main():
         fo_felulet.fill((0, 200, 255))
 
         # Átmásoljuk a képünket a felület (x, y) pontjára.
-        for (i, index) in enumerate(range(5)):
+        for (i, index) in enumerate(kard_list):
             fo_felulet.blit(kartya_kepek[index], ((10+i*kartya_szel),50))
 
         # Most, hogy mindent megrajzoltunk, kirakjuk a képerny˝ore!
@@ -55,4 +56,9 @@ def main():
 
     pygame.quit()
 
-main()
+# Megkeveri a paklit
+xs = list(range(52))
+rng = random.Random()
+rng.shuffle(xs)
+print(xs[:5])
+main(xs[:5])

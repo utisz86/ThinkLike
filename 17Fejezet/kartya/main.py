@@ -20,9 +20,20 @@ def main():
     # Sprite is 16x16 pixels at location 0,0 in the file...
     sor = 0
     oszlop = 0
-    kartya_kep = playingCards.image_at((sor * 140, oszlop * 190, 139, 189))
+    kartya_szel = 139
+    kartya_mag = 189
+    kartya_kep = playingCards.image_at((sor * 140, oszlop * 190, kartya_szel, kartya_mag))
     kartya_kepek = []    
 
+    for i in range(6):
+        for j in range(10):
+            if j > 3:
+                if i <= 4:
+                    kartya_kepek.append(playingCards.image_at((i * 140, j * 190, kartya_szel, kartya_mag)))
+            else:
+                kartya_kepek.append(playingCards.image_at((i * 140, j * 190, kartya_szel, kartya_mag)))
+    
+    del kartya_kepek[-1]
 
     while True:
 
@@ -36,7 +47,8 @@ def main():
         fo_felulet.fill((0, 200, 255))
 
         # Átmásoljuk a képünket a felület (x, y) pontjára.
-        fo_felulet.blit(kartya_kep, (0,0))
+        for (i, index) in enumerate(range(5)):
+            fo_felulet.blit(kartya_kepek[index], ((10+i*kartya_szel),50))
 
         # Most, hogy mindent megrajzoltunk, kirakjuk a képerny˝ore!
         pygame.display.flip()

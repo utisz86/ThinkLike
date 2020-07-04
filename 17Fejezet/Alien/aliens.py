@@ -329,6 +329,11 @@ def main(winstyle = 0):
             Explosion(alien)
             SCORE = SCORE + 1
 
+        for alien in pygame.sprite.groupcollide(aliens, aliens,1,1).keys():
+            boom_sound.play()
+            Explosion(alien)
+            SCORE = SCORE + 1
+
         for bomb in pygame.sprite.spritecollide(player, bombs, 1):
             boom_sound.play()
             Explosion(player)

@@ -1,4 +1,5 @@
 import pygame
+import spritesheet
 import os
 
 # Relative paths
@@ -14,8 +15,14 @@ def main():
     # A set_mode (szélesség, magasság) értékpárt vár.
     fo_felulet = pygame.display.set_mode((960, 480))
 
-    # A PyGame képes kezelni a gif, jpg, png, stb. képformátumokat is.
-    cardJoker = pygame.image.load(os.path.join(image_path, 'cardJoker.png'))
+    playingCards = spritesheet.spritesheet(os.path.join(image_path, 'playingCards.png'))
+
+    # Sprite is 16x16 pixels at location 0,0 in the file...
+    sor = 0
+    oszlop = 0
+    kartya_kep = playingCards.image_at((sor * 140, oszlop * 190, 139, 189))
+    kartya_kepek = []    
+
 
     while True:
 
@@ -29,7 +36,7 @@ def main():
         fo_felulet.fill((0, 200, 255))
 
         # Átmásoljuk a képünket a felület (x, y) pontjára.
-        fo_felulet.blit(cardJoker, (100,120))
+        fo_felulet.blit(kartya_kep, (0,0))
 
         # Most, hogy mindent megrajzoltunk, kirakjuk a képerny˝ore!
         pygame.display.flip()

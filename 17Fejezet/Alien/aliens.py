@@ -18,6 +18,8 @@ BOMB_ODDS      = 60    #chances a new bomb will drop
 ALIEN_RELOAD   = 12     #frames between new aliens
 SCREENRECT     = Rect(0, 0, 640, 480)
 SCORE          = 0
+# New constant
+gravitacio = 0.25
 
 main_dir = os.path.split(os.path.abspath(__file__))[0]
 
@@ -137,6 +139,7 @@ class Shot(pygame.sprite.Sprite):
         self.rect = self.image.get_rect(midbottom=pos)
 
     def update(self):
+        self.speed += gravitacio
         self.rect.move_ip(0, self.speed)
         if self.rect.top <= 0:
             self.kill()
@@ -152,6 +155,7 @@ class Bomb(pygame.sprite.Sprite):
                     alien.rect.move(0,5).midbottom)
 
     def update(self):
+        self.speed += gravitacio
         self.rect.move_ip(0, self.speed)
         if self.rect.bottom >= 470:
             Explosion(self)

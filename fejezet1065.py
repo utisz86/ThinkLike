@@ -52,21 +52,13 @@ def allapot_automata_esemenykezeloje():
     global allapot_sorszam
     varakozas = 1000
     if allapot_sorszam == 0:
-<<<<<<< HEAD:10 Fejezet/fejezet1065.py
         draw_cirle(Eszti, "green")
-=======
-        draw_cirle(Eszti, "lightgreen")
->>>>>>> f7842b4a91abf798c76a0a4d96b4d9fcf32bb1a5:fejezet1064.py
         Eszti.forward(70)
         Eszti.fillcolor("orange")
         allapot_sorszam = 1
     elif allapot_sorszam == 1:
-<<<<<<< HEAD:10 Fejezet/fejezet1065.py
         Eszti.backward(70)
         draw_cirle(Eszti, "darkgrey")
-=======
-        draw_cirle(Eszti, "cornsilk")
->>>>>>> f7842b4a91abf798c76a0a4d96b4d9fcf32bb1a5:fejezet1064.py
         Eszti.forward(70)
         Eszti.fillcolor("orange")
         allapot_sorszam = 2
@@ -76,7 +68,6 @@ def allapot_automata_esemenykezeloje():
         allapot_sorszam = 3
         varakozas = 2000
     else:
-        draw_cirle(Eszti, "coral")
         Eszti.back(140)
         Eszti.fillcolor("green")
         allapot_sorszam = 0

@@ -26,6 +26,8 @@ def main(kartyak):
     # A PyGame képes kezelni a gif, jpg, png, stb. képformátumokat is.
     kartyak=pygame.image.load("playingCards.png")
 
+    kartya1 = Kartya()
+
     kepkockak_szama = 0
     fps = 0
     t0 = time.process_time()

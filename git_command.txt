@@ -1,4 +1,4 @@
-git checkout seotweaks
+git checkout 20-Fejezet
 git merge -s ours master
 git checkout master
-git merge seotweaks
+git merge 20-Fejezet

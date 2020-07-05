@@ -1,4 +1,4 @@
-git checkout 20-Fejezet
+git checkout 20.8-Feladatok
 git merge -s ours master
 git checkout master
-git merge 20-Fejezet
+git merge 20.8-Feladatok

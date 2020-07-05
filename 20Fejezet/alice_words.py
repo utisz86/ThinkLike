@@ -1,0 +1,3 @@
+    """[Írj egy alice_words.py nev˝u programot, amely egy alice_words.txt nev˝u szöveges fájlt hoz létre, mely tartalmazza az összes el˝oforduló szó bet˝urendes felsorolását és darabszámát, az Alice’s Adventures in Wonderland könyv szöveges verziójában. (A könyv ingyenes szöveges változata, valamint sok más szöveg elérhet˝o a http://www.gutenberg.org címen.) A kimeneti fájl els˝o 10 sorában ilyesmit kell látnod:]     """
+
+    

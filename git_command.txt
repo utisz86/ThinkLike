@@ -1,4 +1,1 @@
-git checkout 21-Fejezet
-git merge -s ours master
-git checkout master
-git merge 21-Fejezet
+
